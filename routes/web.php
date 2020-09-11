@@ -17,5 +17,8 @@ Route::name('frontend.')->namespace('Frontend')->group(function () {
     Route::get('post/', 'MainController@show')->name('show');
 });
 
-Route::get('/register', 'Backend\MainController@showRegistrationForm')->name('register');
-Route::post('/register', 'Backend\MainController@processRegistrationForm')->name('register');
+Route::get('/register', 'AuthController@showRegistrationForm')->name('register');
+Route::post('/register', 'AuthController@processRegistrationForm')->name('register');
+
+Route::get('/login', 'AuthController@showLoginForm')->name('login');
+Route::post('/login', 'AuthController@processLogin')->name('login');
