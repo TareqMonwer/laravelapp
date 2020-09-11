@@ -15,6 +15,12 @@
             </div>
         @endif
 
+        @if (session()->has('message'))
+            <div class="alert alert-{{ session('type')  }}">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input name="email" type="text" class="form-control">
